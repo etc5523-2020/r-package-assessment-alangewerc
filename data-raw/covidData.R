@@ -9,4 +9,4 @@ covidData <- melt(data = covidData, id.vars = c("Country", "date"), measure.vars
                                                                                   "total_deaths_per_million", "new_deaths_per_million"))
 
 
-usethis::use_data(covidData, overwrite = TRUE)
+usethis::useuse_data(covidData, overwrite = TRUE)

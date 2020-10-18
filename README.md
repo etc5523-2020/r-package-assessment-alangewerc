@@ -24,7 +24,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-alangewerc")
 
 This is a basic example which shows you how to solve a common problem:
 
-``` r
+``` example
 library(yourPkg)
 ## basic example code
 ```

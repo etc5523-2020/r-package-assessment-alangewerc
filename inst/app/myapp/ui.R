@@ -98,44 +98,22 @@ ui <- fluidPage(
                       ),
 
                     fluidRow(
-
-                      column(3,
-                             plotlyOutput("plotlytotalcases", height = '300px')
-                             ),
-
-
-                      column(3,
-                             plotlyOutput("plotlynewcases", height = '300px')
-                             ),
-
-                      column(3,
-                             plotlyOutput("plotlytotaldeaths", height = '300px')
-                             ),
-
-                      column(3,
-                             plotlyOutput("plotlynewdeaths", height = '300px')
-                             )
-
+                      column_plotly("plotlytotalcases"),
+                      column_plotly("plotlynewcases"),
+                      column_plotly("plotlytotaldeaths"),
+                      column_plotly("plotlynewdeaths")
                       ),
 
 
                     fluidRow(
 
-                      column(3,
-                             plotlyOutput("plotlytotalcasesmillion", height = '300px')
-                      ),
-
-                      column(3,
-                             plotlyOutput("plotlynewcasesmillion", height = '300px')
-                      ),
-
-                      column(3,
-                             plotlyOutput("plotlytotaldeathsmillion", height = '300px')
-                      ),
+                      column_plotly("plotlytotalcasesmillion"),
+                      column_plotly("plotlynewcasesmillion"),
+                      column_plotly("plotlytotaldeathsmillion"),
 
                       column(3,
                              plotlyOutput("plotlynewdeathsmillion", height = '400px')
-                      )
+                             )
 
                       )
 
