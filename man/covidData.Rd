@@ -13,6 +13,8 @@ a tibble with 143825 observations and 5 variables:
 \item \strong{xxxx}: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat
 \item \strong{xxxx}: the total yield of the crop, measured in tonnes per hectare
 }
+
+use
 }
 \source{
 \href{https://ourworldindata.org/crop-yields}{Our World in Data}  and \href{https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md}{Tidy Tuesday}

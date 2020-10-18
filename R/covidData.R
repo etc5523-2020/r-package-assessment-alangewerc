@@ -11,8 +11,7 @@
 #' - **xxxx**: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat
 #' - **xxxx**: the total yield of the crop, measured in tonnes per hectare
 #'
-#'
-#'@import tibble
+#'use
 #'
 #'@source [Our World in Data](https://ourworldindata.org/crop-yields)  and [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md)
 "covidData"
