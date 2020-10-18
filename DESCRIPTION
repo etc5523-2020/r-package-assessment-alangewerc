@@ -5,10 +5,12 @@ Authors@R:
     person(given = "Alan",
            family = "Gewerc",
            role = c("aut", "cre"),
-           email = "agew0001@student.monash.edu"
+           email = "agew0001@student.monash.edu")
 Description: What the package does (one paragraph).
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
