@@ -13,11 +13,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: 
-    R (>= 2.10),
-    tidyverse
+    R (>= 2.10)
 Imports: 
     dplyr,
-    shiny,li
+    shiny,
     ggplot2,
     glue,
     gt,
@@ -29,8 +28,10 @@ Imports:
     reshape,
     shinythemes,
     stringr,
+    tidyverse,
     htmlwidgets
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr

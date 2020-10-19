@@ -9,5 +9,14 @@
 #'
 #' @export
 column_plotly <- function(plot) {
+
+  n_char <- nchar(plot)
+  n_input <- length(plot)
+
+  stopifnot(
+    n_char > 0,
+    n_input > 0
+  )
+
   column(3, plotlyOutput(plot, height = '300px'))
 }
