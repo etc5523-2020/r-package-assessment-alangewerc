@@ -3,4 +3,5 @@
 export(column_plotly)
 export(launch_app)
 export(plot_cases)
+import(plotly)
 import(shiny)

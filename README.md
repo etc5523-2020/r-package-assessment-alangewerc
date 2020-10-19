@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# yourPkg
+# CovidShiny
 
 <!-- badges: start -->
 
@@ -9,7 +9,7 @@
 status](https://github.com/etc5523-2020/r-package-assessment-alangewerc/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-alangewerc/actions)
 <!-- badges: end -->
 
-The goal of yourPkg is to …
+The goal of CovidShiny is to …
 
 ## Installation
 
@@ -25,6 +25,6 @@ devtools::install_github("etc5523-2020/r-package-assessment-alangewerc")
 This is a basic example which shows you how to solve a common problem:
 
 ``` example
-library(yourPkg)
+library(CovidShiny)
 ## basic example code
 ```

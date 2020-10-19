@@ -1,4 +1,4 @@
-Package: yourPkg
+Package: CovidShiny
 Title: This is just a test
 Version: 0.0.0.9000
 Authors@R: 

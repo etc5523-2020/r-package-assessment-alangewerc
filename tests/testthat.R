@@ -1,4 +1,4 @@
 library(testthat)
-library(yourPkg)
+library(CovidShiny)
 
-test_check("yourPkg")
+test_check("CovidShiny")

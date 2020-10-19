@@ -7,7 +7,9 @@
 #'
 #' @return a plot using plotly and ggplot
 #'
-#'@import shiny
+#' @import shiny
+#'
+#' @import plotly
 #'
 #' @example
 #' column_plotly('plotlynewcasesmillion')
@@ -15,7 +17,7 @@
 #' @export
 plot_cases <- function(covid_stat, label, title, country_compare){
 
-  covidplot <- renderPlotly({
+  covidplot <- plotly::renderPlotly({
 
   df_total_cases <- covidData%>%
     filter(Country %in% c(country_compare)) %>%
