@@ -4,6 +4,8 @@
 #'
 #' @return a column with a plotly chart in the ui
 #'
+#'@import shiny
+#'
 #' @example
 #' column_plotly('plotlynewcasesmillion')
 #'
