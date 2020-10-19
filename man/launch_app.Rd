@@ -2,13 +2,20 @@
 % Please edit documentation in R/launch_app.R
 \name{launch_app}
 \alias{launch_app}
-\title{Shiny App Function}
+\title{Launch App Function}
 \usage{
 launch_app()
 }
 \value{
-Shinny App Function
+Shinny App
 }
 \description{
-Shiny App Function
+Launch App Function
+}
+\examples{
+\dontrun{
+launch_app()
+}
+
+
 }

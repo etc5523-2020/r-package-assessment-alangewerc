@@ -1,6 +1,11 @@
-#' Shiny App Function
+#' Launch App Function
 #'
-#' @return Shinny App Function
+#' @return Shinny App
+#'
+#' @examples
+#' \dontrun{
+#' launch_app()
+#' }
 #'
 #'
 #' @export
