@@ -7,7 +7,7 @@
 launch_app()
 }
 \value{
-Shinny App
+Covid Shiny App
 }
 \description{
 Launch App Function

@@ -1,11 +1,12 @@
 #' column_plotly Function
 #'
-#' @param plot a plotly from the server with covid tidy preprocessed data
+#' @param plot A plotly from the server with covid tidy preprocessed data
 #'
-#' @return a column with a plotly chart in the ui
+#' @return Returns a column with a plotly chart in the ui
 #'
-#'@import shiny
+#' @import shiny
 #'
+#' @example column_plotly(plot = 'plotlytotalcases')
 #'
 #' @export
 column_plotly <- function(plot) {

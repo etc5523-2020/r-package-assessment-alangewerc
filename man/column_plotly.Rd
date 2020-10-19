@@ -7,10 +7,10 @@
 column_plotly(plot)
 }
 \arguments{
-\item{plot}{a plotly from the server with covid tidy preprocessed data}
+\item{plot}{A plotly from the server with covid tidy preprocessed data}
 }
 \value{
-a column with a plotly chart in the ui
+Returns a column with a plotly chart in the ui
 }
 \description{
 column_plotly Function

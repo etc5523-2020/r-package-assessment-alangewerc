@@ -1,6 +1,6 @@
 #' Launch App Function
 #'
-#' @return Shinny App
+#' @return Covid Shiny App
 #'
 #' @examples
 #' \dontrun{
