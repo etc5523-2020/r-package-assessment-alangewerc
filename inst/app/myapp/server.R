@@ -23,14 +23,7 @@ library(tidyverse)
 library(formattable)
 
 
-# df_covid <- read.csv('covid-data.csv')
-# df_covid$date <-  as.Date(df_covid$date, format = "%m/%d/%Y")
-
-# covidData<- melt(data = df_covid, id.vars = c("Country", "date"), measure.vars = c("total_cases", "new_cases", "total_deaths", "new_deaths",
-#                                                                                  "total_cases_per_million", "new_cases_per_million",
-#                                                                                  "total_deaths_per_million", "new_deaths_per_million"))
-
-
+# Server function
 function(input, output, session) {
 
   output$plot <- renderPlot({
@@ -40,6 +33,14 @@ function(input, output, session) {
   output$summary <- renderPrint({
     summary(cars)
   })
+
+
+  ################################################
+  ################################################
+  ###### Creating 3 dot density maps
+  ###### According to the  action
+  ###### button choise of the user
+  ################################################
 
 
   output$map <-  renderLeaflet({
@@ -100,8 +101,6 @@ function(input, output, session) {
   })
 
   observeEvent(input$total_cases_per_million, {
-    # Map Plot
-
 
     output$map <-  renderLeaflet({
 
@@ -125,14 +124,14 @@ function(input, output, session) {
                          layerId = ~Country,
                          fillOpacity = 0.3,
                          popup = content,
-                         radius = ~total_cases_per_million**(1/2)/8)
+                         radius = ~total_cases_per_million**(1/2)/8) # using a chosen arbitrary scale
     })
 
   })
 
 
   #####################################
-  ## Table
+  ## Table - using GT
   #####################################
 
   output$table <- render_gt(
@@ -167,6 +166,10 @@ function(input, output, session) {
     s
   })
 
+
+  # Create 8 plots for the second page
+  # Using plot_cases Function
+  # parameters are covid_stat, label, title and country_compare
 
   output$plotlytotalcases <- plot_cases(covid_stat = 'total_cases',
                                         label = 'Date: %s\nCountry: %s\nCases: %s',
@@ -205,6 +208,9 @@ function(input, output, session) {
 
 
   ## New Deaths per Million Plot
+  # This plot is different because it holds the legends
+  # so the plotcases function does not apply for it
+
   output$plotlynewdeathsmillion <- renderPlotly({
 
     df_total_cases <- covidData%>%
@@ -230,153 +236,3 @@ function(input, output, session) {
   })
 
 }
-
-
-  ## Total Cases Plot
-  # output$plotlytotalcases <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'total_cases')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nCases: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("Accumulated Cases")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))   %>%
-  #     config(displayModeBar = F)
-  #
-  # })
-
-
-  ## New Cases Plot
-  # output$plotlynewcases <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'new_cases')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nCases: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("New Cases")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  # })
-
-
-  # ## Total Deaths Plot
-  # output$plotlytotaldeaths <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'total_deaths')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nDeaths: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("Accumulated Deaths")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  # })
-  #
-  #
-  # ## New Deaths Plot
-  # output$plotlynewdeaths <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'new_deaths')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nDeaths: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("New Deaths")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  #
-  # })
-  #
-  #
-  # ## Total Cases Plot per Million
-  # output$plotlytotalcasesmillion <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'total_cases_per_million')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nCases: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("Accumulated Cases per Million")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  #
-  # })
-  #
-  #
-  # ## New Cases per Million Plot
-  # output$plotlynewcasesmillion <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'new_cases_per_million')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nCases: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("New Cases per Million")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  #
-  # })
-  #
-  # ## Total Deaths per Million Plot
-  # output$plotlytotaldeathsmillion <- renderPlotly({
-  #
-  #   df_total_cases <- covidData%>%
-  #     filter(Country %in% c(input$country_compare)) %>%
-  #     filter(variable == 'total_deaths_per_million')
-  #
-  #   day <- highlight_key(df_total_cases)
-  #
-  #   g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-  #     geom_bar(stat="identity", alpha=0.5, aes(text=sprintf('Date: %s\nCountry: %s\nDeaths: %s', date, Country, value))) +
-  #     theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-  #     ggtitle("Accumulated Deaths per Million")
-  #
-  #   ggplotly(g, source = "src", tooltip = "text") %>%
-  #     highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-  #               opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-  #     config(displayModeBar = F)
-  # })

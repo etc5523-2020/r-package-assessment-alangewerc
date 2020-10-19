@@ -7,7 +7,13 @@
 plot_cases(covid_stat, label, title, country_compare)
 }
 \arguments{
-\item{country_compare}{}
+\item{covid_stat}{this is a description}
+
+\item{label}{this is a description}
+
+\item{title}{this is a description}
+
+\item{country_compare}{this is a description}
 }
 \value{
 a plot using plotly and ggplot

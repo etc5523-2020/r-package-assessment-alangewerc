@@ -6,8 +6,6 @@
 #'
 #'@import shiny
 #'
-#' @example
-#' column_plotly('plotlynewcasesmillion')
 #'
 #' @export
 column_plotly <- function(plot) {

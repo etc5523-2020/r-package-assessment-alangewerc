@@ -1,18 +1,15 @@
 #' plot_cases Function
 #'
-#' @param covid_stat
-#' @param label
-#' @param title
-#' @param country_compare
+#' @param covid_stat this is a description
+#' @param label this is a description
+#' @param title this is a description
+#' @param country_compare this is a description
 #'
 #' @return a plot using plotly and ggplot
 #'
 #' @import shiny
-#'
 #' @import plotly
 #'
-#' @example
-#' column_plotly('plotlynewcasesmillion')
 #'
 #' @export
 plot_cases <- function(covid_stat, label, title, country_compare){

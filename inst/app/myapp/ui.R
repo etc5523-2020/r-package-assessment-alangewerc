@@ -22,18 +22,24 @@ library(htmlwidgets)
 library(tidyverse)
 
 
-
-# df_covid <- read.csv('../../../data-raw/covidData.csv')
-# df_covid$date <-  as.Date(df_covid$date, format = "%m/%d/%Y")
+# List of Countries
 country_vector <- unique(preProcessedCovidData$Country)
 
-
+# List of dates in date format
 date_seq <- seq(as.Date('2019-12-31'),as.Date('2020-09-27'),by = 1)
 
 ui <- fluidPage(
   theme = shinytheme("flatly"),
 
   navbarPage("COVID-19 ANALYSIS",
+
+
+             ##################################
+             ########## Page 1
+             ########## Table and map
+             ########## 2 Action buttons and
+             ########## a slider input
+             ##################################
 
            tabPanel("Map",
 
@@ -78,6 +84,12 @@ ui <- fluidPage(
                     ),
 
 
+           ##################################
+           ########## Second Page
+           ########## 8 Plotly plots
+           ##################################
+
+
            tabPanel("Plots",
                     div(style = "padding: 20px;color: blue; text-align: justify; height:120px;width:100%;background-color: #F0F8FF;border-style: none;border-color: #000000",
                         tags$h4("Quantitative Analysis"),
@@ -118,6 +130,11 @@ ui <- fluidPage(
                       )
 
                     ),
+
+           ##################################
+           ########## About Page
+           ##################################
+
 
            tabPanel("About",
 

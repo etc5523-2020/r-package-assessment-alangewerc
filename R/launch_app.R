@@ -2,8 +2,6 @@
 #'
 #' @return Shinny App Function
 #'
-#' @example
-#' CovidShiny::launch_app()
 #'
 #' @export
 launch_app <- function() {
