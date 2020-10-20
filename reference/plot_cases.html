@@ -40,7 +40,8 @@
 
 
 <meta property="og:title" content="plot_cases Function — plot_cases" />
-<meta property="og:description" content="plot_cases Function" />
+<meta property="og:description" content="This function gives the user a stacked barchart plotly after
+performing filtering in the dataset CovidData" />
 
 
 
@@ -118,7 +119,8 @@
     </div>
 
     <div class="ref-description">
-    <p>plot_cases Function</p>
+    <p>This function gives the user a stacked barchart plotly after
+performing filtering in the dataset CovidData</p>
     </div>
 
     <pre class="usage"><span class='fu'>plot_cases</span><span class='op'>(</span><span class='va'>covid_stat</span>, <span class='va'>label</span>, <span class='va'>title</span>, <span class='va'>country_compare</span><span class='op'>)</span></pre>
@@ -148,6 +150,10 @@
 
     <p>a plot using plotly and ggplot</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>plot_cases</span><span class='op'>(</span>covid_stat <span class='op'>=</span> <span class='st'>'total_deaths_per_million'</span>, label <span class='op'>=</span> <span class='st'>'Date: %s\nCountry: %s\nDeaths: %s'</span>, title <span class='op'>=</span> <span class='st'>'Accumulated Deaths per Million'</span>, country_compare <span class='op'>=</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>country_compare</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;shiny.render.function&gt; </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
