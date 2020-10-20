@@ -73,21 +73,29 @@
 <a href="#covidshiny" class="anchor"></a>CovidShiny</h1></div>
 <!-- badges: start -->
 
-<p>The goal of CovidShiny is to …</p>
+<p>The goal of CovidShiny is to present the user the evolution of the pandemic related to COVID-19 across the world. This is accomplished by a range of visualizations such as dot density map, table and stacked plots. This visualizations are presented in a Shiny web application, embedded in this package.</p>
+<p>The user may interact with the data in a variety of forms, using sliders, action buttons and input boxes that will define what variables will presented in each visualization.</p>
+<p>We create a processed dataset that can be accessed with function <code>covidData</code>. It is the same dataset but in a tidy format. The user can access the pre processed data with `preProcessedCovidData".</p>
+<div id="dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#dataset" class="anchor"></a>Dataset</h2>
+<p>The dataset was sourced from the website <a href="https://ourworldindata.org/coronavirus/country/bolivia?country=~BOL">Our World in Data</a>. The website is from the organization with the same name, based on Oxford University.</p>
+<p>The dataset is a multivariate time-series that comprises multiple features from the period of the 31th of December, 2019 to the 29th of September of 2020. It has 40 columns with 36 features of every country. Some directly related to the Covid-19 such as the total number of deaths, total number of deaths per million habitats number of tests per day and positive rate of tests. Other data are social and economic variables that are indirectly related to covid-19 spread such as the median age of the population, GDP per capita, percentage of smokers and much more.</p>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"etc5523-2020/r-package-assessment-alangewerc"</span><span class="op">)</span></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<pre class="example"><code>library(CovidShiny)
-## basic example code</code></pre>
+<p>This is a basic example which shows you how to display the application</p>
+<pre class="example"><code>library(CovidShiny)</code></pre>
+<p><img src="image/app.png" alt="drawing" height="500" width="1000"></p>
+<p><em>The second page of the app - plotly</em></p>
 </div>
 </div>
   </div>
