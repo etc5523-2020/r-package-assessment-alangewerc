@@ -3,27 +3,26 @@
 \docType{data}
 \name{covidData}
 \alias{covidData}
-\title{Our World in Data's Key Crop Yields}
+\title{Our World in Data's Covid Dataset}
 \format{
-a tibble with 143825 observations and 5 variables:
+a data.frame with 358480 observations and 4 variables
 \itemize{
-\item \strong{xxxx}: full country name
-\item \strong{xxxx}: three letter country code
-\item \strong{xxxx}: year from 1961 to 2018
-\item \strong{xxxx}: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat
-\item \strong{xxxx}: the total yield of the crop, measured in tonnes per hectare
+\item \strong{Country}: full country name
+\item \strong{date}: the date of the day
+\item \strong{variable}: the variable related to COVID-19, such as number of cases in the day, number of deaths and more
+\item \strong{value}: The actual number that relates to the variable, the country and the date
 }
-
-use
 }
 \source{
-\href{https://ourworldindata.org/crop-yields}{Our World in Data}  and \href{https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md}{Tidy Tuesday}
+\href{https://ourworldindata.org/coronavirus}{Our World in Data}
 }
 \usage{
 covidData
 }
 \description{
-A dataset containing crop yields for countries over time. Yields
-are measured in tonnes per hectare for seven crops.
+A dataset containing the evolution of the variables related to Covid in 2020
+Socioeconomic data is also available in the table but not used for the shiny APP
+This dataset is the same of the preProcessedCovidData after melting operations - making it tidy
+Only a few covid-related variables are explored in the shiny app
 }
 \keyword{datasets}

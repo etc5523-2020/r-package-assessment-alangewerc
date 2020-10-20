@@ -1,9 +1,15 @@
 #' plot_cases Function
 #'
+#' @description This function gives the user a stacked barchart plotly after
+#' performing filtering in the dataset CovidData
+#'
 #' @param covid_stat this is a description
 #' @param label this is a description
 #' @param title this is a description
 #' @param country_compare this is a description
+#'
+#' @examples
+#' plot_cases(covid_stat = 'total_deaths_per_million', label = 'Date: %s\nCountry: %s\nDeaths: %s', title = 'Accumulated Deaths per Million', country_compare = input$country_compare)
 #'
 #' @return a plot using plotly and ggplot
 #'

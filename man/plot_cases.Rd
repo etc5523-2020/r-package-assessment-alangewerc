@@ -19,5 +19,10 @@ plot_cases(covid_stat, label, title, country_compare)
 a plot using plotly and ggplot
 }
 \description{
-plot_cases Function
+This function gives the user a stacked barchart plotly after
+performing filtering in the dataset CovidData
+}
+\examples{
+plot_cases(covid_stat = 'total_deaths_per_million', label = 'Date: \%s\nCountry: \%s\nDeaths: \%s', title = 'Accumulated Deaths per Million', country_compare = input$country_compare)
+
 }

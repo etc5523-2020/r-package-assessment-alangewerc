@@ -10,7 +10,7 @@ launch_app()
 Covid Shiny App
 }
 \description{
-Launch App Function
+This function launches the covid shiny app for the user
 }
 \examples{
 \dontrun{

@@ -1,12 +1,12 @@
 Package: CovidShiny
-Title: This is just a test
+Title: Covid Shiny App to track and compare the evolution of the pandemic across the world
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Alan",
            family = "Gewerc",
            role = c("aut", "cre"),
            email = "agew0001@student.monash.edu")
-Description: What the package does (one paragraph).
+Description: This shiny application allows user to visualise different variables regarding cases and deaths of Covid-19 across the world. Multiple tools are used such as Map, table and plots.  
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -1,17 +1,16 @@
-#' Our World in Data's Key Crop Yields
+#' Our World in Data's Covid Dataset
 #'
-#' A dataset containing crop yields for countries over time. Yields
-#' are measured in tonnes per hectare for seven crops.
+#' A dataset containing the evolution of the variables related to Covid in 2020
+#' Socioeconomic data is also available in the table but not used for the shiny APP
+#' This dataset is the same of the preProcessedCovidData after melting operations - making it tidy
+#' Only a few covid-related variables are explored in the shiny app
 #'
-#' @format a tibble with 143825 observations and 5 variables:
+#' @format a data.frame with 358480 observations and 4 variables
 #'
-#' - **xxxx**: full country name
-#' - **xxxx**: three letter country code
-#' - **xxxx**: year from 1961 to 2018
-#' - **xxxx**: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat
-#' - **xxxx**: the total yield of the crop, measured in tonnes per hectare
+#' - **Country**: full country name
+#' - **date**: the date of the day
+#' - **variable**: the variable related to COVID-19, such as number of cases in the day, number of deaths and more
+#' - **value**: The actual number that relates to the variable, the country and the date
 #'
-#'use
-#'
-#'@source [Our World in Data](https://ourworldindata.org/crop-yields)  and [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-09-01/readme.md)
+#'@source [Our World in Data](https://ourworldindata.org/coronavirus)
 "covidData"

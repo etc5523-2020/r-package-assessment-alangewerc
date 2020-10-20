@@ -1,5 +1,7 @@
 #' Launch App Function
 #'
+#' @description This function launches the covid shiny app for the user
+#'
 #' @return Covid Shiny App
 #'
 #' @examples

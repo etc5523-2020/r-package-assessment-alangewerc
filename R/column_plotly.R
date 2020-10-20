@@ -1,12 +1,15 @@
 #' column_plotly Function
 #'
+#' @description This function generates a column in a fluidrow with a plotly inside
+#'
 #' @param plot A plotly from the server with covid tidy preprocessed data
 #'
 #' @return Returns a column with a plotly chart in the ui
 #'
 #' @import shiny
 #'
-#' @example column_plotly(plot = 'plotlytotalcases')
+#' @examples
+#' column_plotly(plot = 'plotlytotalcases')
 #'
 #' @export
 column_plotly <- function(plot) {

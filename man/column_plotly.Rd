@@ -13,5 +13,9 @@ column_plotly(plot)
 Returns a column with a plotly chart in the ui
 }
 \description{
-column_plotly Function
+This function generates a column in a fluidrow with a plotly inside
+}
+\examples{
+column_plotly(plot = 'plotlytotalcases')
+
 }
