@@ -1,3 +1,5 @@
+globalVariables(c('covidData', 'Country', 'variable', 'value'))
+
 #' plot_cases Function
 #'
 #' @description This function gives the user a stacked barchart plotly after
@@ -15,7 +17,7 @@
 #'
 #' @import shiny
 #' @import plotly
-#'
+#' @importFrom ggplot2 ggplot aes geom_bar theme_bw theme element_blank ggtitle
 #'
 #' @export
 plot_cases <- function(covid_stat, label, title, country_compare){

@@ -143,7 +143,7 @@ ui <- fluidPage(
                       column(width = 4,  align="center",
                              br(),
                              br(),
-                             img(src='covid.jpg', height = '300px', width = '250px', class="circular--square", style="border-radius:50%"),
+                             img(src='https://www.statnews.com/wp-content/uploads/2020/02/Coronavirus-CDC-645x645.jpg', height = '300px', width = '250px', class="circular--square", style="border-radius:50%")
                              ),
 
                       column(4, align="center",
@@ -151,13 +151,13 @@ ui <- fluidPage(
                              br(),
                              br(),
                              br(),
-                             img(src='monash.jpg', height = '170px', width = '400px'),
+                             img(src='https://ethicsreview-dev.monash.edu/ImageBrowser/Image?path=Monash%20Logo%20Small.jpg', height = '170px', width = '400px'),
                       ),
 
                       column(4, align="center",
                              br(),
                              br(),
-                             img(src='IMG_2609.jpg', height = '300px', width = '250px', class="circular--square", style="border-radius:50%"),
+                             img(src='http://www.alangewerc.com/assets/images/author-image.jpg', height = '300px', width = '250px', class="circular--square", style="border-radius:50%"),
                       )
                       ),
                     fluidRow(
