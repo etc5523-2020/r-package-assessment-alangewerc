@@ -68,7 +68,9 @@ library(CovidShiny)
 launch_app()
 ```
 
-<img src="image/app.png" height = '500' width="1000"/>
+\#<img src="image/app.png" height = '500' width="1000"/>
+
+<img src="image/app.png" width="100%" style="display: block; margin: auto auto auto 0;" />
 
 *The second page of the app - plotly*
 
