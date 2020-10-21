@@ -59,11 +59,10 @@ library(CovidShiny)
 launch_app()
 ```
 
-#<img src="image/app.png" height = '500' width="1000"/>
 
 ```{r external-image, echo=FALSE, out.width='100%', fig.align='left'}
 # adding the figure from COVID-19 Dashboard
-knitr::include_graphics("image/app.png")
+knitr::include_graphics("man/figure/app.png")
 ```
 
 
