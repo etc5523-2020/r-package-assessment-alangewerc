@@ -46,7 +46,7 @@ function(input, output, session) {
   output$map <-  renderLeaflet({
 
     df_covid_map <- preProcessedCovidData%>%
-      filter(date == input$time)
+      dplyr::filter(date == input$time)
 
     content <- paste(sep = "<br/>",
                      paste0("<b>",'Date: ', df_covid_map$date, "</b>"),
@@ -75,7 +75,7 @@ function(input, output, session) {
     output$map <-  renderLeaflet({
 
       df_covid_map <- preProcessedCovidData%>%
-        filter(date == input$time)
+        dplyr::filter(date == input$time)
 
       content <- paste(sep = "<br/>",
                        paste0("<b>",'Date: ', df_covid_map$date, "</b>"),
@@ -105,7 +105,7 @@ function(input, output, session) {
     output$map <-  renderLeaflet({
 
       df_covid_map <- preProcessedCovidData%>%
-        filter(date == input$time)
+        dplyr::filter(date == input$time)
 
       content <- paste(sep = "<br/>",
                        paste0("<b>",'Date: ', df_covid_map$date, "</b>"),
@@ -137,7 +137,7 @@ function(input, output, session) {
   output$table <- render_gt(
     expr =
       preProcessedCovidData%>%
-      filter(date == input$time) %>%
+      dplyr::filter(date == input$time) %>%
       select(Country, total_cases, new_cases, total_cases_per_million, new_cases_per_million)%>%
       magrittr::set_names(c("Country", "Accumulated Cases", "New Cases",  "Accumulated Cases /Million", "New Cases/Million")) %>%
       arrange(desc(`New Cases`)) %>%
@@ -214,8 +214,8 @@ function(input, output, session) {
   output$plotlynewdeathsmillion <- renderPlotly({
 
     df_total_cases <- covidData%>%
-      filter(Country %in% c(input$country_compare)) %>%
-      filter(variable == 'new_deaths_per_million')
+      dplyr::filter(Country %in% c(input$country_compare)) %>%
+      dplyr::filter(variable == 'new_deaths_per_million')
 
     day <- highlight_key(df_total_cases)
 

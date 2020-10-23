@@ -3,7 +3,7 @@ globalVariables(c('covidData', 'Country', 'variable', 'value'))
 #' plot_cases Function
 #'
 #' @description This function gives the user a stacked barchart plotly after
-#' performing filtering in the dataset CovidData
+#' performing dplyr::filtering in the dataset CovidData
 #'
 #' @param covid_stat this is a description
 #' @param label this is a description
@@ -24,9 +24,9 @@ plot_cases <- function(covid_stat, label, title, country_compare){
 
   covidplot <- plotly::renderPlotly({
 
-    df_total_cases <- preProcessedCovidData%>%
-      filter(Country %in% c(country_compare)) %>%
-      filter(variable == covid_stat)
+    df_total_cases <- covidData%>%
+      dplyr::filter(Country %in% c(country_compare)) %>%
+      dplyr::filter(variable == covid_stat)
 
     day <- highlight_key(df_total_cases)
 
