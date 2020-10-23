@@ -182,29 +182,29 @@ function(input, output, session) {
                                       country_compare = input$country_compare)
 
   output$plotlynewdeaths <- plot_cases(covid_stat = 'total_deaths',
-                                        label = 'Date: %s\nCountry: %s\nDeaths: %s',
-                                        title = 'Accumulated Deaths',
-                                        country_compare = input$country_compare)
+                                       label = 'Date: %s\nCountry: %s\nDeaths: %s',
+                                       title = 'Accumulated Deaths',
+                                       country_compare = input$country_compare)
 
   output$plotlytotaldeaths <- plot_cases(covid_stat = 'new_deaths',
-                                      label = 'Date: %s\nCountry: %s\nCases: %s',
-                                      title = 'New Deaths',
-                                      country_compare = input$country_compare)
+                                         label = 'Date: %s\nCountry: %s\nCases: %s',
+                                         title = 'New Deaths',
+                                         country_compare = input$country_compare)
 
   output$plotlytotalcasesmillion <- plot_cases(covid_stat = 'total_cases_per_million',
-                                        label = 'Date: %s\nCountry: %s\nCases: %s',
-                                        title = 'Accumulated Cases per Million',
-                                        country_compare = input$country_compare)
+                                               label = 'Date: %s\nCountry: %s\nCases: %s',
+                                               title = 'Accumulated Cases per Million',
+                                               country_compare = input$country_compare)
 
   output$plotlynewcasesmillion <- plot_cases(covid_stat = 'new_cases_per_million',
-                                      label = 'Date: %s\nCountry: %s\nCases: %s',
-                                      title = 'New Cases per Million',
-                                      country_compare = input$country_compare)
+                                             label = 'Date: %s\nCountry: %s\nCases: %s',
+                                             title = 'New Cases per Million',
+                                             country_compare = input$country_compare)
 
   output$plotlytotaldeathsmillion <- plot_cases(covid_stat = 'total_deaths_per_million',
-                                        label = 'Date: %s\nCountry: %s\nDeaths: %s',
-                                        title = 'Accumulated Deaths per Million',
-                                        country_compare = input$country_compare)
+                                                label = 'Date: %s\nCountry: %s\nDeaths: %s',
+                                                title = 'Accumulated Deaths per Million',
+                                                country_compare = input$country_compare)
 
 
   ## New Deaths per Million Plot

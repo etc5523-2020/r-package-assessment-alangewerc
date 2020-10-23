@@ -1,5 +1,4 @@
 globalVariables(c('covidData', 'Country', 'variable', 'value'))
-
 #' plot_cases Function
 #'
 #' @description This function gives the user a stacked barchart plotly after
@@ -24,25 +23,22 @@ plot_cases <- function(covid_stat, label, title, country_compare){
 
   covidplot <- plotly::renderPlotly({
 
-  df_total_cases <- preProcessedCovidData%>%
-    melt(data = covidData, id.vars = c("Country", "date"), measure.vars = c("total_cases", "new_cases", "total_deaths", "new_deaths",
-                                                                            "total_cases_per_million", "new_cases_per_million",
-                                                                            "total_deaths_per_million", "new_deaths_per_million")) %>%
-    filter(Country %in% c(country_compare)) %>%
-    filter(variable == covid_stat)
+    df_total_cases <- covidData%>%
+      filter(Country %in% c(country_compare)) %>%
+      filter(variable == covid_stat)
 
-  day <- highlight_key(df_total_cases)
+    day <- highlight_key(df_total_cases)
 
-  g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
-    geom_bar(stat="identity", alpha=0.5, aes(text=sprintf(label, date, Country, value))) +
-    theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
-    ggtitle(title)
+    g <- ggplot(day, aes(x = date, y = value, fill = Country)) +
+      geom_bar(stat="identity", alpha=0.5, aes(text=sprintf(label, date, Country, value))) +
+      theme_bw() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) +
+      ggtitle(title)
 
-  ggplotly(g, source = "src", tooltip = "text") %>%
-    highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
-              opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
-    config(displayModeBar = F)
+    ggplotly(g, source = "src", tooltip = "text") %>%
+      highlight(selectize=F, off = "plotly_doubleclick", on = "plotly_click", color = "blue",
+                opacityDim = 0.5, selected = attrs_selected(opacity = 1))  %>%
+      config(displayModeBar = F)
   })
 
   return (covidplot)
-  }
+}
