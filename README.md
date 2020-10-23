@@ -9,13 +9,6 @@
 status](https://github.com/etc5523-2020/r-package-assessment-alangewerc/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-alangewerc/actions)
 <!-- badges: end -->
 
-The present text will describes the `shinyCovid` package. We present how
-to use it, the data, functions, and the shiny app embedded.
-
-The goal of the package is to embed a Shiny dashboard about the COVID-19
-pandemic. It allows user to launch the the app through the function
-`launch_app()`.
-
 This package is embedding a Shiny application dashboard about COVID-19.
 It was developed for an assessment of the unit “ETC5523 - Communicating
 with Data” of the Master of Business Analytics at Monash University.
