@@ -29,7 +29,8 @@ Imports:
     shinythemes,
     stringr,
     tidyverse,
-    htmlwidgets
+    htmlwidgets,
+    formattable
 Suggests: 
     knitr,
     rmarkdown,
