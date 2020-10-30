@@ -1,0 +1,74 @@
+---
+title: "Shiny App Covid"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Shiny App Covid}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+We describe here the package CovidShiny, its features and how to use it.
+
+The purpose of the app is to embed a Shiny Dashboard application about the Covid-19 pandemic across the world. 
+It allows to launch the application through a function contained in the package. 
+
+To install the package from [GitHub](https://github.com/) follow the command (not availabel at CRAN at the moment):
+
+```{r install, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("etc5523-2020/r-package-assessment-alangewerc")
+```
+
+To load the package use the command:
+
+```{r setup, eval=FALSE}
+library(CovidShiny)
+```
+
+To launch the application and visualize the Dashboard:
+
+```{r launch, eval=FALSE}
+launch_app()
+```
+
+The user may also access individually the dataset used in the application. The data comes from the
+website ["Our World in Data"](https://ourworldindata.org) and contains time-series data about covid-19 in 
+almost all countries in the world.
+
+```{r dataset, eval=FALSE}
+preProcessedCovidData
+```
+
+
+## Shiny Application: COVID-19 Across The World
+
+The goal of the application is to provide an overview of the pandemic across the world. To do so,
+we use a range of interactive visualisation tools. 
+
+## The Dataset
+
+The dataset was sourced from the website [Our World in Data](https://ourworldindata.org/coronavirus/country/bolivia?country=~BOL). The website is from the organization with the same name, based on Oxford University. It has a research team focused on providing high quality open-source data for the scientific community across the world to tackle challenging problems such as pandemic.  
+
+The data has COVID information about more than 190 countries across the world. The dataset is a multivariate time-series that comprises multiple features from the period of the 31th of December, 2019 to the 29th of september of 2020. It has 40 columns with 36 features of every country. Some directly related to the Covid-19 such as the total number of deaths, total number of deaths per million habitats number of tests per day and positive rate of tests. Other data are social and economic variables that are indirectly related to covid-19 spread such as the median age of the population, GDP per capita, percentage of smokers and much more. <br>
+
+The user may visualise in the app the daily and accumulated number cases and deaths - in total and relative numbers. The numbers are segmented by country in a dot density plot, a table and multiple stacked bar-plots. 
+
+The app has 3 tabs, being the last one for the introduction of the author. Here is a description of the visualisations:
+
+* Eight stacked plotlys bars - each for one covid-realted variable with countries stackeds
+* A world dot density map where dots represent how much a country suffered of Covid-19.  
+* A Table with the countrioes that most suffered of covid in a specific date.
+There are many ways the user can interact with the App to find relevant information:
+  1. Dot Density Map: With a slider the user can choose the dates from the dot-density map and see in each day of 2020 how was the spread of the virus across the world.
+  2. Dot Density Map: With buttons the user can choose if we wants to see the dot density map in relative or absolute terms (divided by 1 million habs).
+  3. Table: With a slider the user can choose dates and see what were the 10 countries that suffered the most in each day according to new cases of Covid.
+
+
