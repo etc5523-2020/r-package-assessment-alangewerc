@@ -35,7 +35,7 @@ library(CovidShiny)
 
 To launch the application and visualize the Dashboard:
 
-```{r setup, eval=FALSE}
+```{r launch, eval=FALSE}
 launch_app()
 ```
 
